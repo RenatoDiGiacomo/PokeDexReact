@@ -13,21 +13,14 @@
         <div id="app">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <h1>Lista de Pokemon</h1>
-                        <p>Lista de Pokemon</p>
-                        <select name="" id="">
-                            <option @change="perPage='5'">5</option>
-                            <option @change="perPage='10'">10</option>
-                            <option @change="perPage='15'">15</option>
-                            <option @change="perPage='20'">20</option>
-                        </select>
-                        <ul v-model="listPk()">
-                            <li v-for="item in result">{{item.name}}</li>
+                    <div class="col-12">
+                        {{pagination}}
+                        <ul>
+                            <li v-for="item in list">
+                                <a @click.prevent="link" :href="item.url">{{item.name}}</a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-8"></div>
-                    <div class="col-12"></div>
                 </div>
             </div>
         </div>

@@ -1,29 +1,35 @@
 const vm = new Vue({
     el: "#app",
     data: {
-        result: [],
-        pkMore:{},
-        perPage:""
+        voltar:"",
+        proximo:"",
+        list: {},
+        link:""
     },
-    methods: {
-        listPk() {
-            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${this.perPage}`)
-                .then((r) => r.json())
-                .then((data) => {
-                  this.pkList = data
-                  return this.result = data.results
-                })
+       computed:{
+        pagination(){
+            fetch(`https://pokeapi.co/api/v2/pokemon?limit=12&offset=0`)
+            .then((response) => response.json())
+            .then((data) => {
+                this.list = data.results
+                this.voltar = data.previous
+                this.proximo = data.next
+            });
         },
-        pkPage(event) {
-            fetch(event)
-                .then((r) => r.json())
+        pkList() {
+            fetch(this.link)
+                .then((response) => response.json())
                 .then((data) => {
-                  this.pkMore = data;
-                })
-                .catch( err => {
-                    console.log(err,"nada encontrado")
-                })
+                    return this.list = data.results;
+                });
         },
-    },
+        takeLink(){
+            fetch(this.link)
+            .then(r => r.json())
+            .then(data =>{
+                console.log(data)
+            })
+        }           
+    }
+   
 });
-console.log(vm.pkPage())
