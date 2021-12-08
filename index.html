@@ -7,33 +7,27 @@
         <link rel="stylesheet" href="apis/css/bootstrap.min.css" />
         <link rel="stylesheet" href="app/css/style.css" />
         <title>PokeDex Renew</title>
-    	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" id="external-js"></script>
-</head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" id="external-js"></script>
+    </head>
     <body>
         <div id="app">
             <div class="container">
                 <div class="row">
                     <div class="col-4">
-                        <h1></h1>
+                        <h1>Lista de Pokemon</h1>
                         <p>Lista de Pokemon</p>
-                        <!-- <select v-model="listPk()">
-                            <option></option>
-                        </select> -->
-                        <ul>
-                            <li v-for="item in result">
-                                <a @click="pkPage(item.url)">{{item.name}}</a>
-                            </li>
+                        <select name="" id="">
+                            <option @change="perPage='5'">5</option>
+                            <option @change="perPage='10'">10</option>
+                            <option @change="perPage='15'">15</option>
+                            <option @change="perPage='20'">20</option>
+                        </select>
+                        <ul v-model="listPk()">
+                            <li v-for="item in result">{{item.name}}</li>
                         </ul>
                     </div>
-                    <div class="col-8">
-                        
-                        <ul>
-                            <li v-for="item in pkMore" :key="item.sprites">{{item}}</li>
-                        </ul>
-                    </div>
-                    <div class="col-12">
-                        <button @click="listPk">aqui</button>
-                    </div>
+                    <div class="col-8"></div>
+                    <div class="col-12"></div>
                 </div>
             </div>
         </div>

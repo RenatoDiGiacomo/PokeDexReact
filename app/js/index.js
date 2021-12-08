@@ -1,17 +1,17 @@
 const vm = new Vue({
     el: "#app",
     data: {
-        pkList:{},
         result: [],
-        pkMore:{}
+        pkMore:{},
+        perPage:""
     },
     methods: {
         listPk() {
-            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=1118`)
+            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${this.perPage}`)
                 .then((r) => r.json())
                 .then((data) => {
                   this.pkList = data
-                  this.result = data.results
+                  return this.result = data.results
                 })
         },
         pkPage(event) {
@@ -20,6 +20,10 @@ const vm = new Vue({
                 .then((data) => {
                   this.pkMore = data;
                 })
+                .catch( err => {
+                    console.log(err,"nada encontrado")
+                })
         },
     },
 });
+console.log(vm.pkPage())
