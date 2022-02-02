@@ -1,35 +1,27 @@
 import React from "react";
 import "./css/App.css";
+import PkList from './Base/PkList'
+
 
 function App() {
-  const [dados, setDados] = React.useState(null);
+  const url = "https://pokeapi.co/api/v2/"
+  const [menu, setMenu] = React.useState(null);
+  const [select, setSelect] = React.useState(null);
 
-  async function getData() {
-    const recever = await fetch(`https://pokeapi.co/api/v2/pokemon`);
-    const json = await recever.json();
-    return setDados(json);
+  async function menuList() {
+    const resp = await fetch(url);
+    const data = await resp.json();
+    setMenu(data);
   }
+  React.useEffect(menuList, []);
 
-  async function next() {
-    const recever = await fetch(`https://pokeapi.co/api/v2/pokemon`);
-    const json = await recever.json();
-    return setDados(json.next);
-  }
-  // async function getData() {
-  //   const recever = await fetch(`https://pokeapi.co/api/v2/pokemon`);
-  //   const json = await recever.json();
-  //   return setDados(json);
-  // }
-  
-  return (
-    <div className="App">
-      <button onClick={getData}>aqui</button>
-      <ul>
-        {dados &&
-          dados.results.map((item) => <li key={item.name}>{item.name}</li>)}
-      </ul>
-    </div>
-  );
+
+
+
+ 
+  return <div className="App">
+    <PkList menu={menu} click="aqui"/>
+  </div>;
 }
 
 export default App;
