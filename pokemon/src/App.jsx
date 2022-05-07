@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import PkList from "./Components/PkList";
 
+import "./App.scss";
+
 function App() {
     const [pokemon, setPokemon] = React.useState([]);
     const [currentUrl, setCurrentUrl] = React.useState("https://pokeapi.co/api/v2/pokemon");
@@ -17,7 +19,7 @@ function App() {
             .then((res) => {
                 const response = res.data;
                 const data = response.results;
-                setPokemon(data)
+                setPokemon(data);
                 setNextUrl(response.next);
                 setPrevUrl(response.previous);
                 setLoading(false);
@@ -28,17 +30,15 @@ function App() {
     }, [nextUrl, prevUrl, currentUrl]);
     if (error) return <h1>erro</h1>;
     if (loading) return <h1>Loading...</h1>;
-    console.log(pokemon);
+
     return (
         <>
             <h1>PokeDex Universal</h1>
-            {pokemon && pokemon.map((pk,index) => (
-                <PkList key={index} url={pk.url}/>
-            ))}
-            <div>
+            <div className="btn">
                 {prevUrl && <button onClick={() => setCurrentUrl(prevUrl)}>back</button>}
                 {nextUrl && <button onClick={() => setCurrentUrl(nextUrl)}>next</button>}
             </div>
+            <div className="pkCard">{pokemon && pokemon.map((pk, index) => <PkList key={index} url={pk.url} />)}</div>
         </>
     );
 }

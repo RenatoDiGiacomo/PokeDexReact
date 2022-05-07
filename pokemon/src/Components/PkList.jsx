@@ -1,23 +1,42 @@
 import React from "react";
 import axios from "axios";
 
-const PkList = ({ url }) => {
+import "./PkList.scss";
+
+const PkList = ({ url, loading }) => {
     const [data, setData] = React.useState(null);
+    const [imgChange, setImgChange] = React.useState(null);
+    const [cardLoading, setCardLoading] = React.useState(false);
 
     React.useEffect(() => {
-        const getData = axios.get(url).then((res) => res.data);
-        getData.then((data) => setData({name:data.name}));
+        setCardLoading(true);
+        const getData = axios.get(url).then((res) => {
+            return res.data;
+        });
+        getData.then((data) => {
+            setData({ name: data.name, img: data.sprites.front_default, imgShy: data.sprites.front_shiny });
+            setCardLoading(false);
+        });
     }, [url]);
-console.log(data)
-    const Style = {
-        display: "flex",
-        flexDirection:"row",
-        width:'25%',
-        border: "1px solid black",
+
+    const changeImg = () => {
+        if (imgChange === data.img) {
+            setImgChange(data.imgShy);
+        }
+        if (imgChange === data.imgShy) {
+            setImgChange(data.img);
+        }
     };
+    if (cardLoading) return <h1>Loading...</h1>;
+
     return (
-        <div>
-            {data && <div style={Style}>{data.name}</div>}
+        <div className="item1">
+            {data && (
+                <div className="item2">
+                    <h1>{data.name}</h1>
+                    <img onClick={changeImg} src={imgChange} alt={data.name} title={data.name} />
+                </div>
+            )}
         </div>
     );
 };
