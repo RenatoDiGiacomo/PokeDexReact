@@ -1,0 +1,10 @@
+//Partials
+@import "./Partials/_reset";
+@import "./Partials/_fonts";
+@import "./Partials/_varibles";
+
+//Components
+@import './Components/Header.scss';
+@import './Components/Footer.scss';
+//Pages
+@import './Pages/Home.scss'

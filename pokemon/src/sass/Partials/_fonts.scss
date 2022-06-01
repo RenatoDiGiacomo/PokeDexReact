@@ -1,0 +1,16 @@
+@font-face {
+    font-family: RobotoPK;
+    src: url("../../Assets/fonts/roboto.woff2");
+}
+@font-face {
+    font-family: RobotoBoldPK;
+    src: url("../../Assets/fonts/robotoB.woff2");
+}
+@font-face {
+    font-family: Ketchum;
+    src: url("../../Assets/fonts/Ketchum.otf");
+}
+
+$font: RobotoPk;
+$fontBold: RobotoBoldPk;
+$fontAlt: Ketchum;

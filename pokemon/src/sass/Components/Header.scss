@@ -1,0 +1,9 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to left, $yellow 0%, $redDark 90%);
+    box-shadow: $shadowBox;
+}

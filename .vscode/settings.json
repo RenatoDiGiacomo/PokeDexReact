@@ -12,7 +12,7 @@
         "**/package-lock.json": true,
         "**/package.json": true,
         "**/README.md": true,
-        "**/.vscode": false //change after finished
+        "**/.vscode": true //change after finished
     },
     "git.enabled": true,
     "workbench.tree.indent": 12,
