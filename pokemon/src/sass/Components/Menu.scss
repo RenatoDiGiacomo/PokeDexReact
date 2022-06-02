@@ -1,28 +1,49 @@
 #menu {
     display: block;
-    width: 50px;
-    height: 50px;
     position: fixed;
-    right: 1.5%;
-    bottom: 8%;
+    z-index: 0;
+    width: 0%;
+    height: 90vh;
+    right: 0;
+    top: 4rem;
     background-color: $redDark;
     border-radius: 10px;
     transition: all 0.5s linear;
     &.active {
         width: 25%;
-        height: 70vh;
+        height: 100vh;
+    }
+    &::after {
+        content: "<";
+        color: $white;
+        font-size: 28px;
+        padding-left: 0.8rem;
+        position: absolute;
+        left: -36px;
+        display: block;
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        background-color: $redDark;
     }
     ul {
         opacity: 0;
         margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
         li {
             margin-top: 3rem;
             text-align: center;
             list-style: none;
+            a {
+                color: $white;
+                text-decoration: none;
+            }
         }
         &.active {
             margin: 0;
             opacity: 1;
+            transition: all 1s linear;
         }
     }
 }
