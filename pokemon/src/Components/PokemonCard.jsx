@@ -11,6 +11,7 @@ const PokemonCard = ({ url }) => {
             .then((data) => {
                 console.log(data);
                 setPkdata({
+                    id: data.id,
                     name: data.name,
                     img: data.sprites.front_default,
                     hp: data.stats[0].base_stat,
@@ -27,18 +28,17 @@ const PokemonCard = ({ url }) => {
 
     if (!pkdata) return null;
     return (
-        
-            <div className="cards">
-                <div className="cardImg">
-                    <img src={pkdata.img} alt="" />
-                </div>
-                <div className="cardName">
-                    <h2>{pkdata.name}</h2>
-                    <p>{pkdata.type1}</p>
-                    <p>{pkdata.type2}</p>
-                </div>
+        <div className="cards">
+            <div className="cardImg">
+                <img src={pkdata.img} alt="" />
             </div>
-       
+            <div className="cardName">
+                <h2>{pkdata.name}</h2>
+                <span>#{pkdata.id}</span>
+                <p>{pkdata.type1}</p>
+                <p>{pkdata.type2}</p>
+            </div>
+        </div>
     );
 };
 

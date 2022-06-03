@@ -23,7 +23,7 @@ const Pokemon = () => {
             <div className="cardList">
                 {pokemon && pokemon.map((pk, index) => <PokemonCard key={index} url={pk.url} />)}
             </div>
-            <Pagination next={next} previous={previous} />
+            <Pagination next={next} previous={previous} seturl={seturl} />
         </>
     );
 };
