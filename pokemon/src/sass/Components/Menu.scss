@@ -9,11 +9,8 @@
     background-color: $redDark;
     border-radius: 10px;
     transition: all 0.5s linear;
-    &.active {
-        width: 25%;
-        height: 100vh;
-    }
     &::after {
+        cursor: pointer;
         content: "<";
         color: $white;
         font-size: 28px;
@@ -25,6 +22,13 @@
         height: 36px;
         border-radius: 6px;
         background-color: $redDark;
+    }
+    &.active {
+        width: 25%;
+        height: 100vh;
+        &::after{
+            transform: rotate(180deg);
+        }
     }
     ul {
         opacity: 0;
@@ -38,6 +42,7 @@
             a {
                 color: $white;
                 text-decoration: none;
+                text-transform: uppercase;
             }
         }
         &.active {

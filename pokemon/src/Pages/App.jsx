@@ -1,28 +1,26 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Menu from "../Components/Menu";
-
 import Dashboard from "./Dashboard";
 import Pokemon from "./Pokemon";
 
-const Home = () => {
+const App = () => {
     return (
         <>
             <Header />
-            <BrowserRouter>
+            <main id="App">
                 <Routes>
                     <Route path="/" element={<Dashboard />} />
-                    <Route path="/pokemon" element={<Pokemon />} />
+                    <Route path="/Pokemon" element={<Pokemon />} />
                 </Routes>
-            </BrowserRouter>
+            </main>
             <Footer />
             <Menu />
         </>
     );
 };
 
-export default Home;
+export default App;

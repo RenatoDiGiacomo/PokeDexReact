@@ -10,7 +10,12 @@
     font-family: Ketchum;
     src: url("../../Assets/fonts/Ketchum.otf");
 }
+@font-face {
+    font-family: PkClassic;
+    src: url("../../Assets/fonts/PkClassic.ttf");
+}
 
 $font: RobotoPk;
 $fontBold: RobotoBoldPk;
 $fontAlt: Ketchum;
+$fontClassic: PkClassic;

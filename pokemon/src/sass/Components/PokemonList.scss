@@ -1,0 +1,11 @@
+.cardList {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    .cards {
+        align-items: center;
+        width: 100%;
+        justify-self: center;
+        border: 1px solid red;
+    }
+}

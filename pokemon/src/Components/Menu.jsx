@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
     const [active, setActive] = React.useState(false);
@@ -12,19 +13,10 @@ const Menu = () => {
         <nav id="menu" className={active ? "active" : ""} onClick={handleActive}>
             <ul className={active ? "active" : ""}>
                 <li>
-                    <a href="#">Item1</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="#">Item1</a>
-                </li>
-                <li>
-                    <a href="#">Item1</a>
-                </li>
-                <li>
-                    <a href="#">Item1</a>
-                </li>
-                <li>
-                    <a href="#">Item1</a>
+                    <Link to="pokemon">Pokemon</Link>
                 </li>
             </ul>
         </nav>
