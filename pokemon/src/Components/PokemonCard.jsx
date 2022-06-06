@@ -9,7 +9,6 @@ const PokemonCard = ({ url }) => {
             .get(url)
             .then((res) => res.data)
             .then((data) => {
-                console.log(data);
                 setPkdata({
                     id: data.id,
                     name: data.name,
@@ -28,13 +27,13 @@ const PokemonCard = ({ url }) => {
 
     if (!pkdata) return null;
     return (
-        <div className="cards">
+        <div className={"cards " + pkdata.type1 + " " + pkdata.type2}>
             <div className="cardImg">
                 <img src={pkdata.img} alt="" />
             </div>
             <div className="cardName">
+                <span className="idCard">#{pkdata.id}</span>
                 <h2>{pkdata.name}</h2>
-                <span>#{pkdata.id}</span>
                 <p>{pkdata.type1}</p>
                 <p>{pkdata.type2}</p>
             </div>

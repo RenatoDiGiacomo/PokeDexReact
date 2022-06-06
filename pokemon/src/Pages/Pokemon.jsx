@@ -20,10 +20,10 @@ const Pokemon = () => {
     }, [url]);
     return (
         <>
+            <Pagination next={next} previous={previous} seturl={seturl} />
             <div className="cardList">
                 {pokemon && pokemon.map((pk, index) => <PokemonCard key={index} url={pk.url} />)}
             </div>
-            <Pagination next={next} previous={previous} seturl={seturl} />
         </>
     );
 };

@@ -2,11 +2,13 @@
 @import "./Partials/_reset";
 @import "./Partials/_fonts";
 @import "./Partials/_varibles";
+@import "./Partials/_pktypecolor";
 
 //Components
 @import "./Components/Header.scss";
 @import "./Components/Footer.scss";
 @import "./Components/Menu.scss";
+@import "./Components/Pagination.scss";
 @import "./Components/PokemonList.scss";
 
 //Pages
