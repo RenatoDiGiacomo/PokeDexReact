@@ -19,9 +19,108 @@ $fairy: #d685ad;
 
 .normal {
     background-color: $normal;
+    &.fire {
+        background: linear-gradient(to bottom right, $normal, $fire);
+    }
+    &.water {
+        background: linear-gradient(to bottom right, $normal, $water);
+    }
+    &.electric {
+        background: linear-gradient(to bottom right, $normal, $electric);
+    }
+    &.grass {
+        background: linear-gradient(to bottom right, $normal, $grass);
+    }
+    &.ice {
+        background: linear-gradient(to bottom right, $normal, $ice);
+    }
+    &.fighting {
+        background: linear-gradient(to bottom right, $normal, $fighting);
+    }
+    &.poison {
+        background: linear-gradient(to bottom right, $normal, $poison);
+    }
+    &.ground {
+        background: linear-gradient(to bottom right, $normal, $ground);
+    }
+    &.flying {
+        background: linear-gradient(to bottom right, $normal, $flying);
+    }
+    &.psychic {
+        background: linear-gradient(to bottom right, $normal, $psychic);
+    }
+    &.bug {
+        background: linear-gradient(to bottom right, $normal, $normal);
+    }
+    &.rock {
+        background: linear-gradient(to bottom right, $normal, $rock);
+    }
+    &.ghost {
+        background: linear-gradient(to bottom right, $normal, $ghost);
+    }
+    &.dragon {
+        background: linear-gradient(to bottom right, $normal, $dragon);
+    }
+    &.dark {
+        background: linear-gradient(to bottom right, $normal, $dark);
+    }
+    &.steel {
+        background: linear-gradient(to bottom right, $normal, $steel);
+    }
+    &.fairy {
+        background: linear-gradient(to bottom right, $normal, $fairy);
+    }
 }
 .fire {
     background-color: $fire;
+    &.water {
+        background: linear-gradient(to bottom right, $normal, $water);
+    }
+    &.electric {
+        background: linear-gradient(to bottom right, $normal, $electric);
+    }
+    &.grass {
+        background: linear-gradient(to bottom right, $normal, $grass);
+    }
+    &.ice {
+        background: linear-gradient(to bottom right, $normal, $ice);
+    }
+    &.fighting {
+        background: linear-gradient(to bottom right, $normal, $fighting);
+    }
+    &.poison {
+        background: linear-gradient(to bottom right, $normal, $poison);
+    }
+    &.ground {
+        background: linear-gradient(to bottom right, $normal, $ground);
+    }
+    &.flying {
+        background: linear-gradient(to bottom right, $normal, $flying);
+    }
+    &.psychic {
+        background: linear-gradient(to bottom right, $normal, $psychic);
+    }
+    &.bug {
+        background: linear-gradient(to bottom right, $normal, $normal);
+    }
+    &.rock {
+        background: linear-gradient(to bottom right, $normal, $rock);
+    }
+    &.ghost {
+        background: linear-gradient(to bottom right, $normal, $ghost);
+    }
+    &.dragon {
+        background: linear-gradient(to bottom right, $normal, $dragon);
+    }
+    &.dark {
+        background: linear-gradient(to bottom right, $normal, $dark);
+    }
+    &.steel {
+        background: linear-gradient(to bottom right, $normal, $steel);
+    }
+    &.fairy {
+        background: linear-gradient(to bottom right, $normal, $fairy);
+    }
 }
 .water {
     background-color: $water;
@@ -72,18 +171,5 @@ $fairy: #d685ad;
     background-color: $fairy;
 }
 
-.normal.flying {
-    background: linear-gradient(to bottom right, $normal, $flying);
-}
-.grass.poison {
-    background: linear-gradient(to bottom right, $grass, $poison);
-}
-.fire.flying {
-    background: linear-gradient(to bottom right, $fire, $flying);
-}
-.bug.poison {
-    background: linear-gradient(to bottom right, $bug, $poison);
-}
-.bug.flying {
-    background: linear-gradient(to bottom right, $bug, $flying);
+.normal {
 }
