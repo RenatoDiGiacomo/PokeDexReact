@@ -7,16 +7,16 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         //project
-        "**/node_modules": true,
+        "**/node_modules": false,
         "**/.gitignore": true,
-        "**/package-lock.json": true,
-        "**/package.json": true,
+        "**/package-lock.json": false,
+        "**/package.json": false,
         "**/README.md": true,
-        "**/.vscode": true //change after finished
+        "**/.vscode": false //change after finished
     },
     "git.enabled": true,
     "workbench.tree.indent": 12,
-    "editor.tabSize": 8,
+    "editor.tabSize": 2,
     "prettier.printWidth": 120,
-    "prettier.tabWidth": 4
+    "prettier.tabWidth": 2
 }
