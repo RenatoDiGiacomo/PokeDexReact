@@ -1,7 +1,19 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
+import PkTitle from "../Assets/fonts/Pocket_Monk.otf";
+import PkText from "../Assets/fonts/Flexo/Flexo-Regular.ttf";
 
 export const GlobalStyled = createGlobalStyle`
-  html,
+@font-face {
+  font-family: "PkTitle";
+  font-weight: normal;
+  src:url(${PkTitle}) format("opentype");
+}
+@font-face {
+  font-family: "PkText";
+  src: url(${PkText}) format("truetype");
+}
+
+html,
 body,
 div,
 span,
@@ -382,5 +394,10 @@ textarea {
   color: #000;
   padding: 0.2em 0;
 }
-
+/**
+  Patter
+*/
+body{
+  background-color: #f5f5f5;
+}
 `;
