@@ -18,19 +18,19 @@ const MenuHamburgerSpanStyled = styled.span`
   transition: all 0.2s ease-in;
   position: relative;
   &:nth-child(1) {
-    top: ${({ menuNav }) => (menuNav === "true" ? "8px" : "initial")};
+    top: ${(props) => (props.$menunav === "true" ? "8px" : "initial")};
     width: 31px;
-    transform: ${({ menuNav }) =>
-      menuNav === "true" ? "rotateZ(45deg)" : "rotateZ(0)"};
+    transform: ${(props) =>
+      props.$menunav === "true" ? "rotateZ(45deg)" : "rotateZ(0)"};
   }
   &:nth-child(2) {
-    width: ${({ menuNav }) => (menuNav === "true" ? "0px" : "31px")};
+    width: ${(props) => (props.$menunav === "true" ? "0px" : "31px")};
   }
   &:nth-child(3) {
     width: 31px;
-    bottom: ${({ menuNav }) => (menuNav === "true" ? "6px" : "initial")};
-    transform: ${({ menuNav }) =>
-      menuNav === "true" ? "rotateZ(-45deg)" : "rotateZ(0)"};
+    bottom: ${(props) => (props.$menunav === "true" ? "6px" : "initial")};
+    transform: ${(props) =>
+      props.$menunav === "true" ? "rotateZ(-45deg)" : "rotateZ(0)"};
   }
 `;
 

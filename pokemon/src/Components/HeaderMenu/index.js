@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderSytled, HeaderLogoTitleStyled } from "./style";
+import { HeaderSytled, HeaderLogoTitleStyled, HeaderInputStyled } from "./style";
 import Menu from "./Menu";
 
 const HeaderMenu = () => {
@@ -7,7 +7,11 @@ const HeaderMenu = () => {
     <HeaderSytled>
       <Menu/>
       <HeaderLogoTitleStyled>PokeDex</HeaderLogoTitleStyled>
-      <input />
+      <datalist id="search">
+        <option>item1</option>
+        <option>item2</option>
+      </datalist>
+      <HeaderInputStyled type="text"  autoComplete="on" list="search" />
     </HeaderSytled>
   );
 };

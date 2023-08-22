@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import useRequestApi from "../../Hooks/useRequestApi";
+import ListContainer from "../../Components/Pages/ListContainer";
 
 const List = () => {
-  return (
-    <div>List</div>
-  )
-}
+  const { data, loading, error, fetchData } = useRequestApi();
+  const [endPoint, setEndPoint] = React.useState("/pokemon");
 
-export default List
+  React.useEffect(() => {
+    fetchData(endPoint);
+  }, [endPoint]);
+
+  if (loading) {
+    return <div>loading</div>;
+  } else {
+    return <ListContainer data={data} fetchData={fetchData} />;
+  }
+};
+
+export default List;

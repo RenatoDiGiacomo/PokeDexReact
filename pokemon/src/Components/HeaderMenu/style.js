@@ -7,9 +7,9 @@ const HeaderSytled = styled.header`
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  background: linear-gradient(to top, lightgray, gray, lightgray);
+
+  background-color: #dedede;
   padding: 0 2rem;
- 
 `;
 const HeaderLogoTitleStyled = styled.p`
   color: transparent;
@@ -23,7 +23,8 @@ const HeaderLogoTitleStyled = styled.p`
   background-clip: text;
 `;
 
-export {
-  HeaderSytled,
-  HeaderLogoTitleStyled
-};
+const HeaderInputStyled = styled.input`
+  border: none;
+`;
+
+export { HeaderSytled, HeaderLogoTitleStyled, HeaderInputStyled };

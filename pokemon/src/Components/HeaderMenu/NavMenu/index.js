@@ -6,15 +6,15 @@ import {
   MenuHamburgerLiSytled,
 } from "./style";
 
-const NavMenu = ({ menuNav, setMenuNav }) => {
+const NavMenu = ({ menunav, setMenuNav }) => {
   return (
-    <MenuHamburgerNavSytled menu={menuNav ? "true" : "false"}>
+    <MenuHamburgerNavSytled $menunav={menunav ? "true" : "false"}>
       <MenuHamburgerUlSytled>
         <MenuHamburgerLiSytled>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={()=>setMenuNav(false)}>Home</Link>
         </MenuHamburgerLiSytled>
         <MenuHamburgerLiSytled>
-          <Link to="/list">List</Link>
+          <Link to="/list" onClick={()=>setMenuNav(false)}>List</Link>
         </MenuHamburgerLiSytled>
       </MenuHamburgerUlSytled>
     </MenuHamburgerNavSytled>

@@ -3,16 +3,16 @@ import { MenuHamburgerStyled, MenuHamburgerSpanStyled } from "./style";
 import NavMenu from "../NavMenu";
 
 const Menu = () => {
-  const [menuNav, setMenuNav] = React.useState(false);
+  const [menunav, setMenuNav] = React.useState(false);
 
   return (
     <>
-      <MenuHamburgerStyled onClick={() => setMenuNav(!menuNav)}>
+      <MenuHamburgerStyled onClick={() => setMenuNav(!menunav)}>
         {Array.from({ length: 3 }, (_, index) => (
-          <MenuHamburgerSpanStyled index={index} menuNav={menuNav ? "true":"false"} />
+          <MenuHamburgerSpanStyled key={index} $menunav={menunav ? "true":"false"} />
         ))}
       </MenuHamburgerStyled>
-      <NavMenu menuNav={menuNav} setMenuNav={setMenuNav} />
+      <NavMenu menunav={menunav} setMenuNav={setMenuNav} />
     </>
   );
 };
