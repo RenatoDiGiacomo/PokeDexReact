@@ -1,21 +1,26 @@
 import axios from "axios";
 import React from "react";
 
-const useRequestApi = (url) => {
-  const [data, setData] = React.useState(null);
+const useRequestApi = () => {
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(null);
+  /* Data Fetch */
+  const [dataPokedex, setDataPokedex] = React.useState(null);
+  const [dataRegion, setDataRegion] = React.useState(null);
+  const [dataPk, setPk] = React.useState(null);
+  const [dataPkName, setDataPkName] = React.useState(null);
+
+  /* Data Fetch */
 
   const api = axios.create({
-    baseURL: "https://pokeapi.co/api/v2/",
-    timeout: 3000,
+    // baseURL: "https://pokeapi.co/api/v2/",
+    // timeout: 3000,
   });
-  
-  const fetchData = async (url) => {
+
+  const fetchDataList = async (url) => {
     setLoading(true);
     try {
       const res = await api.get(url);
-      setData(res.data);
+      setDataPokedex(res.data);
     } catch (error) {
       console.error(error.message);
     } finally {
@@ -23,7 +28,43 @@ const useRequestApi = (url) => {
     }
   };
 
-  return { data, loading, error, fetchData };
+  const fetchPkRegionItems = async (url) => {
+    setLoading(true);
+    try {
+      const res = await api.get(url);
+      const resPokedex = await api.get(res.data.pokedexes[0].url);
+      localStorage.setItem("RegionName", res.data.name);
+      if (res.status === 200 && resPokedex.status === 200) {
+        setDataRegion(resPokedex.data.pokemon_entries);
+      }
+    } catch (error) {
+      console.error(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+  const fetchPkData = async (url) => {
+    setLoading(true);
+    try {
+      const filterUrl = url.replace("pokemon-species", "pokemon");
+      const res = await api.get(filterUrl);
+      setPk(res.data);
+    } catch (error) {
+      console.error(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return {
+    dataPokedex,
+    dataRegion,
+    dataPk,
+    loading,
+    fetchDataList,
+    fetchPkRegionItems,
+    fetchPkData,
+  };
 };
 
 export default useRequestApi;

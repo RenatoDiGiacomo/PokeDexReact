@@ -11,11 +11,12 @@ const NavMenu = ({ menunav, setMenuNav }) => {
     <MenuHamburgerNavSytled $menunav={menunav ? "true" : "false"}>
       <MenuHamburgerUlSytled>
         <MenuHamburgerLiSytled>
-          <Link to="/" onClick={()=>setMenuNav(false)}>Home</Link>
+          <Link to="/" onClick={()=>setMenuNav(false)}>Início</Link>
         </MenuHamburgerLiSytled>
         <MenuHamburgerLiSytled>
-          <Link to="/list" onClick={()=>setMenuNav(false)}>List</Link>
+          <Link to="/pokedex" onClick={()=>setMenuNav(false)}>Pokedex</Link>
         </MenuHamburgerLiSytled>
+
       </MenuHamburgerUlSytled>
     </MenuHamburgerNavSytled>
   );

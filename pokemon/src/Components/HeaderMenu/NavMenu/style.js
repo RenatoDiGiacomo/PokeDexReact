@@ -3,6 +3,7 @@ import BGImage from "../../../Assets/Img/body_bg.png";
 
 const MenuHamburgerNavSytled = styled.nav`
   position: fixed;
+  z-index: 9999;
   width: 250px;
   transform: translateX(
     ${(props) => (props.$menunav === "true" ? "0" : "-250px")}
@@ -15,6 +16,7 @@ const MenuHamburgerNavSytled = styled.nav`
   top: 56px;
   left: 0;
   transition: all 0.2s ease-in;
+  border-radius: 0 0 6px 0;
 `;
 const MenuHamburgerUlSytled = styled.ul`
   display: flex;

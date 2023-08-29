@@ -1,0 +1,21 @@
+const TypeListColorPallet = [
+  { type: "normal", bgColor: "#a4acaf", color: "#212121" },
+  { type: "fire", bgColor: "#fd7d24", color: "#fafafa" },
+  { type: "water", bgColor: "#4592c4", color: "#fafafa" },
+  { type: "electric", bgColor: "#edd535", color: "#212121" },
+  { type: "grass", bgColor: "#9bcc50", color: "#212121" },
+  { type: "ice", bgColor: "#51c4e7", color: "#212121" },
+  { type: "fighting", bgColor: "#d56723", color: "#fafafa" },
+  { type: "poison", bgColor: "#b97fc9", color: "#fafafa" },
+  { type: "ground", bgColor: "#f7de3f", color: "#212121" },
+  { type: "flying", bgColor: "#3dc7ef", color: "#212121" },
+  { type: "psychic", bgColor: "#f366b9", color: "#fafafa" },
+  { type: "bug", bgColor: "#729f3f", color: "#fafafa" },
+  { type: "rock", bgColor: "#a38c21", color: "#fafafa" },
+  { type: "ghost", bgColor: "#7b62a3", color: "#fafafa" },
+  { type: "dragon", bgColor: "#f16e57", color: "#fafafa" },
+  { type: "dark", bgColor: "#707070", color: "#fafafa" },
+  { type: "steel", bgColor: "#9eb7b8", color: "#212121" },
+  { type: "fairy", bgColor: "#fdb9e9", color: "#212121" },
+];
+export default TypeListColorPallet;
