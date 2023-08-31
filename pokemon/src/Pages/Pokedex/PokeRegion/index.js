@@ -31,7 +31,7 @@ const PokeRegion = () => {
         <PokeRegionSelectUlStyled>
           {dataRegion?.map((item, index) => (
             <PokeRegionSelectLiStyled onClick={() => fetchPkData(item.pokemon_species.url)} key={index}>
-              {item.pokemon_species.name}
+              #{item.entry_number}-{item.pokemon_species.name}
             </PokeRegionSelectLiStyled>
           ))}
         </PokeRegionSelectUlStyled>

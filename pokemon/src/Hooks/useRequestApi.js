@@ -7,6 +7,7 @@ const useRequestApi = () => {
   const [dataPokedex, setDataPokedex] = React.useState(null);
   const [dataRegion, setDataRegion] = React.useState(null);
   const [dataPk, setPk] = React.useState(null);
+  const [dataPkSpecies, setPkSpecies] = React.useState(null);
   const [dataPkName, setDataPkName] = React.useState(null);
 
   /* Data Fetch */
@@ -55,15 +56,28 @@ const useRequestApi = () => {
       setLoading(false);
     }
   };
+  const fetchPkSpecies = async (url) => {
+    setLoading(true);
+    try {
+      const res = await api.get(url);
+      setPkSpecies(res.data);
+    } catch (error) {
+      console.error(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return {
     dataPokedex,
     dataRegion,
     dataPk,
+    dataPkSpecies,
     loading,
     fetchDataList,
     fetchPkRegionItems,
     fetchPkData,
+    fetchPkSpecies
   };
 };
 

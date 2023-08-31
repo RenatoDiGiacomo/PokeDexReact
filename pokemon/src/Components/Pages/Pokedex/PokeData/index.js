@@ -5,13 +5,14 @@ import SelectAPokemon from "../../../SelectAPokemon";
 import PokeDataInfo from "../PokeDataInfo";
 
 const PokeData = ({ dataPk, loading }) => {
+
   if (loading) {
     return <Loading />;
   }
   if (dataPk) {
     return (
-      <PokeRegionSelectDataStyled >
-        <PokeDataInfo pk={dataPk} />
+      <PokeRegionSelectDataStyled>
+        <PokeDataInfo pk={dataPk}  />
       </PokeRegionSelectDataStyled>
     );
   } else {

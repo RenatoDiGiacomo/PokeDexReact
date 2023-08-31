@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 const PokeRegionSelectDataStyled = styled("div")`
   width: 100%;
-  border: 1px solid black;
+  min-width: 250px;
 `;
 
 export { PokeRegionSelectDataStyled };
