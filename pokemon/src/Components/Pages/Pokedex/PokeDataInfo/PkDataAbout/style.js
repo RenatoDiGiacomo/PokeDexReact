@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 const PkDataAboutContainerStyled = styled("div")`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 21px;
 `;
 const PkDataAboutBoxStyled = styled("div")`
@@ -15,10 +15,16 @@ const PkDataAboutContentTitleStyled = styled("h3")`
   font-size: 24px;
 `;
 
-const PkDataAboutContentTextStyled = styled("p")``;
+const PkDataAboutContentTextStyled = styled("p")`
+  display: flex;
+  align-items: center;
+`;
 const PkDataAboutContentSubTitleBoxStyled = styled("span")`
   width: 100%;
   text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 `;
 
 const PkDataAboutSelectStyled = styled("select")`

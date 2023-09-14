@@ -12,6 +12,7 @@ const PkDexImgContainerStyled = styled("div")`
   width: 100%;
   display: grid;
   margin-right: 10px;
+  grid-gap: 12px;
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `;
 const PkDexImgStyled = styled("img")`
@@ -26,7 +27,6 @@ const PkDexImgStyled = styled("img")`
   z-index: 1;
   transition: all 0.4s linear;
   &:hover {
-    height: auto;
     transform: scale(1.2);
     z-index: 2;
     filter: brightness(1);

@@ -20,7 +20,23 @@ const PokeRegionTitleStyled = styled("h1")`
   display: flex;
   justify-content: center;
 `;
-const PokeRegionBackBtnStyled = styled("button")``;
+const PokeRegionBackBtnStyled = styled("button")`
+  cursor: pointer;
+  font-family: PkText;
+  display: flex;
+  border: #00000066;
+  padding: 0.5rem 1rem;
+  background-color: #00000066;
+  color: white;
+  border-radius: 6px;
+  transition: all 0.3s ease-in;
+  &:hover {
+    background-color: white;
+    color: #00000066;
+    border: white;
+    transition: all 0.3s ease-in;
+  }
+`;
 const PokeRegionSelectContainerStyled = styled("div")`
   display: flex;
   box-sizing: border-box;
@@ -56,6 +72,46 @@ const PokeRegionSelectLiStyled = styled("li")`
     width: 90%;
   }
 `;
+const PokeRegionSelectBoxStyled = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
+const PokeRegionInputBoxStyled = styled("div")`
+  width: 100%;
+  display: flex;
+  background-color: #00000066;
+  /* border: 2px solid black; */
+`;
+const PokeRegionInputStyled = styled("input")`
+  font-family: PkText;
+  display: flex;
+  flex-grow: 2;
+  border: none;
+  border-bottom: 0.5px solid black;
+  &:focus {
+    outline: none;
+  }
+`;
+const PokeRegionBtnStyled = styled("button")`
+  cursor: pointer;
+  font-family: PkText;
+  display: flex;
+  justify-content: center;
+  padding: .3rem;
+  border: #00000066;
+  background-color: #00000066;
+  color: white;
+  border-radius: 6px;
+  transition: all 0.3s ease-in;
+  &:hover {
+    background-color: white;
+    color: #00000066;
+    border: white;
+    transition: all 0.3s ease-in;
+  }
+  flex-grow: 1;
+`;
 
 export {
   PokeRegionContainerStyled,
@@ -65,4 +121,8 @@ export {
   PokeRegionSelectContainerStyled,
   PokeRegionSelectUlStyled,
   PokeRegionSelectLiStyled,
+  PokeRegionSelectBoxStyled,
+  PokeRegionInputBoxStyled,
+  PokeRegionInputStyled,
+  PokeRegionBtnStyled,
 };

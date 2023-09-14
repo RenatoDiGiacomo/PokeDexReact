@@ -10,10 +10,6 @@ import {
   PokeInfoDataPkImgStyled,
   PokeInfoPkContentContainerStyled,
   PokeInfoPkContentBoxStyled,
-  PokeInfoPkContentTitleStyled,
-  PokeInfoPkMeasureBoxStyled,
-  PokeInfoPkMeasureDataBarStyled,
-  PokeInfoPkMeasureDataStyled,
 } from "./style";
 import PokeTabsInfo from "./PokeTabsInfo";
 import PokeSelectedItem from "./PokeSelectedItem";
@@ -41,8 +37,8 @@ const PokeDataInfo = ({ pk }) => {
         <PokeInfoDataPkImgContainerStyled>
           <PokeInfoDataPkImgStyled
             src={ImgLoad ? pk.sprites.other["official-artwork"].front_default : LoadingImg}
-            alt=""
-            title=""
+            alt={pk.name}
+            title={pk.name}
             onLoad={() => setImgLoad(true)}
           />
         </PokeInfoDataPkImgContainerStyled>
