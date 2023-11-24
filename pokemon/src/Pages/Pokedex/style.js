@@ -10,28 +10,44 @@ const PkTitleText = styled("h1")`
 `;
 const PkDexImgContainerStyled = styled("div")`
   width: 100%;
+  overflow-x: visible;
   display: grid;
+  flex-direction: row;
   margin-right: 10px;
   grid-gap: 12px;
+  flex-wrap: nowrap;
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `;
-const PkDexImgStyled = styled("img")`
+
+const PkDexBoxImgStyled = styled("div")`
   cursor: pointer;
+  position: relative;
   width: 100%;
   max-width: 175px;
-  height: 350px;
-  object-fit: cover;
-  border: 1px solid #0000005c;
+  height: 100px;
   border-radius: 6px;
   filter: brightness(0.6);
-  z-index: 1;
-  transition: all 0.4s linear;
+  z-index: 0;
+  overflow: hidden;
   &:hover {
-    transform: scale(1.2);
+    overflow: visible;
     z-index: 2;
     filter: brightness(1);
+  }
+
+`;
+const PkDexImgStyled = styled("img")`
+  width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  object-position: 0 -256px;
+  transition: all 0.2s ease-out;
+  &:hover {
+    
+    object-position: 0;
     transition: all 0.4s linear;
   }
 `;
 
-export { PkContainerStyled, PkTitleText, PkDexImgContainerStyled, PkDexImgStyled };
+
+export { PkContainerStyled, PkTitleText, PkDexImgContainerStyled, PkDexBoxImgStyled, PkDexImgStyled };

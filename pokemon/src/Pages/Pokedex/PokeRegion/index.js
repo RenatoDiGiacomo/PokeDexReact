@@ -12,23 +12,23 @@ import {
   PokeRegionSelectBoxStyled,
   PokeRegionInputBoxStyled,
   PokeRegionInputStyled,
-  PokeRegionBtnStyled,
 } from "./style";
 import PokeData from "../../../Components/Pages/Pokedex/PokeData";
 
 const PokeRegion = () => {
   const { dataRegion, dataPk, loading, fetchPkRegionItems, fetchPkData } = useRequestApi();
   const navigate = useNavigate();
-  const [filterInput, setFilterInput] = React.useState("");
+  const [filterInput, setFilterInput] = React.useState(null);
 
-  const HandleFilter = (e) => {
-    if (e?.pokemon_species?.name === filterInput) {
-      return e.pokemon_species.name;
-    } else {
-      return e.pokemon_species.name;
+  const HandleFilter = (pk) => {
+    if (filterInput !== null) {
+      if (pk.pokemon_species.name.includes(filterInput)) {
+        return true;
+      } else {
+        return false;
+      }
     }
-
-    // console.log(filterInput);
+    return true;
   };
 
   React.useEffect(() => {
@@ -44,27 +44,15 @@ const PokeRegion = () => {
       <PokeRegionSelectContainerStyled>
         <PokeRegionSelectBoxStyled>
           <PokeRegionInputBoxStyled>
-            <datalist id="PkList">
-              {dataRegion?.map((item, index) => (
-                <option key={index} value={item.pokemon_species.name}>
-                  {item.entry_number}-{item.pokemon_species.name}
-                </option>
-              ))}
-            </datalist>
-            <PokeRegionInputStyled
-              onChange={({ target }) => setFilterInput(target.value)}
-              list="PkList"
-              type="text"
-              id="PkInput"
-            />
-            <PokeRegionBtnStyled onClick={(e) => HandleFilter(e)}>Procurar</PokeRegionBtnStyled>
+            <PokeRegionInputStyled placeholder="Procurar Pokemon" onChange={({ target }) => setFilterInput(target.value)} type="text" id="PkInput" />
           </PokeRegionInputBoxStyled>
           <PokeRegionSelectUlStyled>
-            {dataRegion?.filter(HandleFilter).map((item, index) => (
-              <PokeRegionSelectLiStyled onClick={() => fetchPkData(item.pokemon_species.url)} key={index}>
-                #{item.entry_number}-{item.pokemon_species.name}
-              </PokeRegionSelectLiStyled>
-            ))}
+            {dataRegion &&
+              dataRegion.filter(HandleFilter).map((item, index) => (
+                <PokeRegionSelectLiStyled onClick={() => fetchPkData(item.pokemon_species.url)} key={index}>
+                  #{item.entry_number}-{item.pokemon_species.name}
+                </PokeRegionSelectLiStyled>
+              ))}
           </PokeRegionSelectUlStyled>
         </PokeRegionSelectBoxStyled>
         <PokeData dataPk={dataPk} loading={loading} />

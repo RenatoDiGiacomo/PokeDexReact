@@ -11,11 +11,11 @@ import alola from "../../Assets/Img/regions/alola.png";
 import galar from "../../Assets/Img/regions/galar.png";
 import paldea from "../../Assets/Img/regions/paldea.png";
 
-import { PkContainerStyled, PkTitleText, PkDexImgContainerStyled, PkDexImgStyled } from "./style";
+import { PkContainerStyled, PkTitleText, PkDexImgContainerStyled, PkDexImgStyled, PkDexBoxImgStyled } from "./style";
 import { useNavigate } from "react-router-dom";
 
 const Pokedex = () => {
-  const { dataPokedex, dataRegion,loading, fetchDataList, fetchPkRegionItems } = useRequestApi();
+  const { dataPokedex, dataRegion, loading, fetchDataList, fetchPkRegionItems } = useRequestApi();
   const navigate = useNavigate();
   const imgData = {
     kanto: kanto,
@@ -29,7 +29,7 @@ const Pokedex = () => {
   };
 
   const handleSelect = (url) => {
-    localStorage.setItem("region",url)
+    localStorage.setItem("region", url);
     navigate("pokeRegion");
   };
 
@@ -49,12 +49,14 @@ const Pokedex = () => {
           dataPokedex?.results?.map((item, index) => (
             <React.Fragment key={index}>
               {imgData[item.name] && (
-                <PkDexImgStyled
-                  onClick={() => handleSelect(item.url)}
-                  src={imgData[item.name]}
-                  alt={`REGIÃO DE ${item.name.toUpperCase()}`}
-                  title={`REGIÃO DE ${item.name.toUpperCase()}`}
-                />
+                <PkDexBoxImgStyled>
+                  <PkDexImgStyled
+                    onClick={() => handleSelect(item.url)}
+                    src={imgData[item.name]}
+                    alt={`REGIÃO DE ${item.name.toUpperCase()}`}
+                    title={`REGIÃO DE ${item.name.toUpperCase()}`}
+                  />
+                </PkDexBoxImgStyled>
               )}
             </React.Fragment>
           ))}

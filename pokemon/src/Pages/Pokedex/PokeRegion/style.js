@@ -87,9 +87,11 @@ const PokeRegionInputStyled = styled("input")`
   font-family: PkText;
   display: flex;
   flex-grow: 2;
-  border: none;
-  border-bottom: 0.5px solid black;
+  padding: 6px;
+  border: 0.5px solid black;
+  background-color: #dadada;
   &:focus {
+    background-color: #fff;
     outline: none;
   }
 `;
@@ -98,7 +100,7 @@ const PokeRegionBtnStyled = styled("button")`
   font-family: PkText;
   display: flex;
   justify-content: center;
-  padding: .3rem;
+  padding: 0.3rem;
   border: #00000066;
   background-color: #00000066;
   color: white;
